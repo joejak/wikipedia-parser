@@ -1,0 +1,13 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        meta(http-equiv="X-UA-Compatible", content="ie=edge")
+        title Document
+    body
+        h1 Wikipedia Exposer
+        h2 Api Calls
+        each apicall, index in apicalls
+            h3(onclick=`alert(${apicall.url})`)= apicall.name 
+            blockquote=apicall.description 
