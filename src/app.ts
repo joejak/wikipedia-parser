@@ -3,9 +3,9 @@ import { Application } from 'express';
 
 class App {
     public app: Application
-    public port: number
+    public port: number | string
 
-    constructor(appInit: { port: number; middleWares: any; controllers: any; }) {
+    constructor(appInit: { port: number | string; middleWares: any; controllers: any; }) {
         this.app = express(); 
         this.port = appInit.port
 

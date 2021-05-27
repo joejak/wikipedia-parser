@@ -7,7 +7,7 @@ import getInfoCardController from './controllers/getInfoCard.controller'
 import raw from './controllers/raw.controller'
 
 const app = new App({
-    port: 5000,
+    port: process.env.PORT || 8080,
     controllers: [
         new HomeController(),
         new getInfoCardController(),
