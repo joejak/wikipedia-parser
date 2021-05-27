@@ -25,9 +25,21 @@ class HomeController implements IControllerBase {
             },
             {
                 id:2,
-                name: 'rawHtml',
-                url: '/rawHtml',
-                description: "gets a raw html dump of the queried page as a JSON object (?url=http(s)://www.host.com/page) <- append to end"
+                name: 'rawHtmlasJSON',
+                url: '/raw',
+                description: "gets a raw html dump of the queried page as a JSON object (/raw?url=http(s)://www.host.com/page) <- append to end url in address bar!"
+            },
+            {
+                id: 3,
+                name: '(coming soon) getSubElements',
+                url: '/', //<-update when ready
+                description: "allows us to only grab certain sub elements, even filter for data only, not tags"
+            },
+            {
+                id: 4,
+                name: '(coming soon) getScripts',
+                url: '/', //<-update when ready
+                description: "allows us to only grab script elements for a page"
             }
         ]
 
