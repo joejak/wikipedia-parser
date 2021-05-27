@@ -1,6 +1,7 @@
 import * as express from 'express'
 import { Request, Response } from 'express'
 import IControllerBase from './interfaces/IControllerBase.interface'
+import domParser from '../domParser'; 
 
 class raw implements IControllerBase {
     public path = '/raw'
@@ -33,7 +34,6 @@ class raw implements IControllerBase {
                     res = err; 
                 })
         } 
-        console.log("returning"); 
         return res; 
     }
 
@@ -41,9 +41,14 @@ class raw implements IControllerBase {
         console.log("index"); 
         this.getPage(req.query)
             .then(resolve =>{
-                console.log("resolve"); 
-                console.log(resolve); 
-                res.status(200).send(JSON.stringify(resolve));  
+                let dp = new domParser(); 
+                var json; 
+                dp.getJSON(resolve).then(x => {
+                    json = x; 
+                    console.log("json", json); 
+                    res.status(200).json(json);  
+                }); 
+              
             })
             .catch(err =>{
                 console.log("error"); 

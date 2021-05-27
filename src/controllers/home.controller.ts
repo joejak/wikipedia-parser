@@ -27,19 +27,7 @@ class HomeController implements IControllerBase {
                 id:2,
                 name: 'rawHtml',
                 url: '/rawHtml',
-                description: "gets a raw html dump of the queried page (?url=http(s)://www.host.com/page) <- append to end"
-            },
-            {
-                id: 3,
-                name: 'getNextContentSection',
-                url: '/getNextContentSection',
-                description: "gets the next block of content"
-            },
-            {
-                id: 4,
-                name: 'getInfoCard',
-                url: '/getInfoCard',
-                description: "gets the info card of a wikipedia page"
+                description: "gets a raw html dump of the queried page as a JSON object (?url=http(s)://www.host.com/page) <- append to end"
             }
         ]
 
